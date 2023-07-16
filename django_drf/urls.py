@@ -27,4 +27,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('lessons/', include('lesson.urls', namespace='lessons')),
     path('users/', include('users.urls', namespace='users')),
+    path('payments/', include('payment.urls', namespace='payments')),
 ] + router.urls
