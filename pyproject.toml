@@ -14,6 +14,8 @@ pillow = "^10.0.0"
 python-dotenv = "^1.0.0"
 psycopg2-binary = "^2.9.6"
 django-filter = "^23.2"
+pre-commit = "^3.3.3"
+pytest = "^7.4.0"
 
 
 [build-system]
