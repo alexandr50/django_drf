@@ -16,6 +16,7 @@ psycopg2-binary = "^2.9.6"
 django-filter = "^23.2"
 pre-commit = "^3.3.3"
 pytest = "^7.4.0"
+djangorestframework-simplejwt = "^5.2.2"
 
 
 [build-system]

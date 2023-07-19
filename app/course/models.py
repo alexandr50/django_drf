@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Course(models.Model):
+    owner = models.ForeignKey('users.User', on_delete=models.SET_NULL, null=True, verbose_name='создатель')
     name = models.CharField(max_length=30, verbose_name="название")
     preview = models.ImageField(
         upload_to="course",
