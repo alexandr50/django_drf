@@ -9,7 +9,7 @@ from payment.models import Payment
 class UserSerializers(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('email', 'city')
+        fields = ("email", "city")
 
 
 class UserDetailSerializer(serializers.ModelSerializer):

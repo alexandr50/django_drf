@@ -40,15 +40,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'rest_framework_simplejwt',
+    "rest_framework_simplejwt",
     "django_filters",
     "rest_framework",
     "api.apps.ApiConfig",
     "users.apps.UsersConfig",
-    'course.apps.CourseConfig',
+    "course.apps.CourseConfig",
     "lesson.apps.LessonConfig",
     "payment.apps.PaymentConfig",
-
+    "subscription.apps.SubscriptionConfig",
 ]
 
 MIDDLEWARE = [
@@ -143,10 +143,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticated",
+        "rest_framework.permissions.AllowAny",
     ],
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
 }
 

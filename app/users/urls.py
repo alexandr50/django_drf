@@ -13,8 +13,8 @@ from app.users.views import (
 app_name = UsersConfig.name
 
 urlpatterns = [
-    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("users/", UsersListAPIView.as_view(), name="list_view"),
     path("users/create/", UserCreateAPIView.as_view(), name="create_view"),
     path("users/update/<int:pk>/", UserUpdateAPIView.as_view(), name="update_view"),
