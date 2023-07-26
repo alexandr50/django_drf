@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "django_filters",
     "rest_framework",
+    "drf_yasg",
     "api.apps.ApiConfig",
     "users.apps.UsersConfig",
     "course.apps.CourseConfig",
@@ -143,7 +144,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny",
+        "rest_framework.permissions.IsAuthenticated",
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTAuthentication",
@@ -151,3 +152,6 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = "users.User"
+
+STRIPE_API_KEY = os.getenv('STRIPE_API_KEY')
+STRIPE_URL = os.getenv('STRIPE_URL')

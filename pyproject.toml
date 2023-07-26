@@ -17,6 +17,9 @@ django-filter = "^23.2"
 pre-commit = "^3.3.3"
 pytest = "^7.4.0"
 djangorestframework-simplejwt = "^5.2.2"
+drf-yasg = "^1.21.7"
+stripe = "^5.5.0"
+requests = "^2.31.0"
 
 
 [build-system]

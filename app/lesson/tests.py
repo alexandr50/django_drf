@@ -74,9 +74,7 @@ class LessonsTestCase(APITestCase):
         lesson = Lesson.objects.create(**data)
         lesson.course.add(self.course)
 
-        response = self.client.get(
-            f"/api/v1/lessons/",
-        )
+        response = self.client.get()
 
         self.assertEqual(
             response.status_code,

@@ -33,3 +33,4 @@ class Payment(models.Model):
         choices=KIND_OF_PAYMENT,
         verbose_name="вид платежа",
     )
+    paiment_intent_id  = models.CharField(max_length=50, blank=True, null=True, verbose_name='ID платежа в Stripe')

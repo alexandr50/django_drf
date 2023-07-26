@@ -9,25 +9,25 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         payment_list = [
             {
-                "user": User.objects.get(email="dmitrymaslov2016@mail.ru"),
+                "user": User.objects.get(),
                 "course": Course.objects.get(name="python"),
                 "amount": 2000,
                 "kind_of_payment": "наличные",
             },
             {
-                "user": User.objects.get(email="dmitrymaslov2016@mail.ru"),
+                "user": User.objects.get(),
                 "course": Course.objects.get(name="j"),
                 "amount": 4000,
                 "kind_of_payment": "перевод",
             },
             {
-                "user": User.objects.get(email="alexander.maslov505@gmail.com"),
+                "user": User.objects.get(),
                 "course": Course.objects.get(name="j"),
                 "amount": 3000,
                 "kind_of_payment": "перевод",
             },
             {
-                "user": User.objects.get(email="alexander.maslov505@gmail.com"),
+                "user": User.objects.get(),
                 "course": Course.objects.get(name="python"),
                 "amount": 3000,
                 "kind_of_payment": "наличные",
