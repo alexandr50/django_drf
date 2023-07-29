@@ -1,4 +1,5 @@
 import stripe
+from django.core.mail import send_mail
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics, status
 from rest_framework.filters import OrderingFilter
@@ -42,6 +43,7 @@ class PaymentCreateAPIView(generics.CreateAPIView):
         create_payment(course=serializer.validated_data['course'],
                        user=self.request.user,
                        session=session)
+
         return Response(session['id'], status=status.HTTP_201_CREATED)
 
 

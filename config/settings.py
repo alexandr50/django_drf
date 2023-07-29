@@ -30,7 +30,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -82,7 +81,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -96,7 +94,6 @@ DATABASES = {
         "PORT": os.getenv("PORT_DB"),
     },
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -116,7 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -127,7 +123,6 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -142,16 +137,33 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+AUTH_USER_MODEL = "users.User"
+
+EMAIL_HOST = 'smtp.yandex.ru' #os.getenv('EMAIL_HOST')
+EMAIL_PORT = 465
+SERVER_EMAIL=DEFAULT_FROM_EMAIL=EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+PASSWORD_YANDEX = os.getenv('PASSWORD_YANDEX')
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticated",
+        "rest_framework.permissions.AllowAny",
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
 }
 
-AUTH_USER_MODEL = "users.User"
+
+
+
+
 
 STRIPE_API_KEY = os.getenv('STRIPE_API_KEY')
 STRIPE_URL = os.getenv('STRIPE_URL')
+
+CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')
+CELERY_TIMEZONE = "Australia/Tasmania"
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
