@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     "django_filters",
     "rest_framework",
     "drf_yasg",
-    "api.apps.ApiConfig",
+    "django_celery_beat",
     "users.apps.UsersConfig",
     "course.apps.CourseConfig",
     "lesson.apps.LessonConfig",
@@ -139,9 +139,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.User"
 
-EMAIL_HOST = 'smtp.yandex.ru' #os.getenv('EMAIL_HOST')
+EMAIL_HOST = os.getenv('EMAIL_HOST')
 EMAIL_PORT = 465
-SERVER_EMAIL=DEFAULT_FROM_EMAIL=EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+SERVER_EMAIL = DEFAULT_FROM_EMAIL = EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 PASSWORD_YANDEX = os.getenv('PASSWORD_YANDEX')
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
@@ -154,9 +154,6 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
 }
-
-
-
 
 
 
