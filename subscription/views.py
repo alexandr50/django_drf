@@ -10,6 +10,7 @@ from subscription.models import Subscription
 class SubscriptionList(ListAPIView):
     """Вью возвращающая список подписок"""
 
+
     queryset = Subscription.objects.all()
     serializer_class = SubscriptionSerializer
 
