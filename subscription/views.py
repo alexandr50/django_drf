@@ -18,6 +18,7 @@ class SubscriptionList(ListAPIView):
 class SubscriptionCreate(CreateAPIView):
     """Вью создающая подписку"""
 
+
     queryset = Subscription.objects.all()
     serializer_class = SubscriptionCreateSerializer
 
