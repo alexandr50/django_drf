@@ -31,6 +31,7 @@ class PaymentCreateAPIView(generics.CreateAPIView):
     queryset = Payment.objects.all()
 
     def post(self, request, *args, **kwargs):
+        """Создание курса с аутентифицированным юзером"""
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         session = checkout_session(
