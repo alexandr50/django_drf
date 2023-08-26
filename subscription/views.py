@@ -10,12 +10,14 @@ from subscription.models import Subscription
 class SubscriptionList(ListAPIView):
     """Вью возвращающая список подписок"""
 
+
     queryset = Subscription.objects.all()
     serializer_class = SubscriptionSerializer
 
 
 class SubscriptionCreate(CreateAPIView):
     """Вью создающая подписку"""
+
 
     queryset = Subscription.objects.all()
     serializer_class = SubscriptionCreateSerializer

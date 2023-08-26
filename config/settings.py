@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-k!+@g1%14-&&98i%+zyv#z3+xrw85)a2*i$7q2fm90ki_#&8rr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -85,12 +85,12 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": os.getenv("NAME_DB"),
-        "USER": os.getenv("USER_DB"),
-        "PASSWORD": os.getenv("PASSWORD"),
-        "HOST": os.getenv("HOST_DB"),
-        "PORT": os.getenv("PORT_DB"),
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": 'django_drf',
+        "USER": "postgres",
+        # "PASSWORD": '121091li',
+        # "HOST": 'db',
+        # "PORT": os.getenv("PORT_DB"),
     },
 }
 
