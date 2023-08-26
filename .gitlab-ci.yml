@@ -3,7 +3,7 @@ stages:
 Deploy to stage:
     stage: deploy
     script:
-        - cp '$$ENV_STAGE' .env
+        - cp $ENV_STAGE .env
     only:
         - docker_branch
     tags:
