@@ -3,7 +3,7 @@ stages:
 Deploy to stage:
     stage: deploy
     script:
-        - cp $ENV_STAGE $(pwd)/.env
+        - cp $ENV_STAGE .env
     only:
         - develop
     tags:
