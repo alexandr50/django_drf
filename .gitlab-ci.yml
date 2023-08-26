@@ -5,6 +5,6 @@ Deploy to stage:
     script:
         - cp $ENV_STAGE .env
     only:
-        - docker_branch
+        - develop
     tags:
         - dev
