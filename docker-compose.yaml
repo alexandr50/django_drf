@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    container_name: db_app
+    environment:
+      POSTGRES_PASSWORD: 121091li
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_DB: db_django_drf
+
+
+  redis:
+    image: redis
+    container_name: redis_app
+    command: redis-server --save 20 1 --loglevel warning
+    ports:
+      - '9999:8001'
+    volumes:
+      - ./data/cache:/data
+
+
+  app:
+    build: .
+    container_name: app
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
+      - redis
+
