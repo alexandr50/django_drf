@@ -1,6 +1,5 @@
 stages:
     - deploy
-
 Deploy to stage:
     stage: deploy
     script:
